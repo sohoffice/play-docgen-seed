@@ -1,11 +1,11 @@
 resolvers += Resolver.bintrayIvyRepo("sohoffice", "sbt-plugins")
 
-name := """play26"""
-organization := "com.example"
+name := """play-docgen-seed"""
+organization := "com.sohoffice"
 
 version := "1.0-SNAPSHOT"
 
-lazy val root = (project in file("."))
+lazy val playDocGen = (project in file("."))
   .enablePlugins(PlayScala, DocExtractPlugin, SwaggerPlugin)
 
 scalaVersion := "2.12.3"
