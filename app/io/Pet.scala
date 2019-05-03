@@ -6,11 +6,11 @@ import play.api.libs.json.Json
   * Pet is an animal who is considered to be a family member
   *
   * @param name Pet usually has one name
-  * @param age Current age of a Pet
+  * @param weight Weight of this Pet in KG.
   */
 case class Pet(
   name: String,
-  age: Int
+  weight: Double
 )
 
 object Pet {

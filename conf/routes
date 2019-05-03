@@ -5,17 +5,22 @@
 
 # Map static resources from the /public folder to the /assets URL path
 ### NoDocs ###
-GET        /assets/*file                       controllers.Assets.versioned(path="/public", file: Asset)
+GET        /assets/*file                 controllers.Assets.versioned(path="/public", file: Asset)
 
 ### NoDocs ###
-GET        /docs/swagger-ui/*file              controllers.Assets.at(path:String="/public/lib/swagger-ui", file:String)
+GET        /docs/swagger-ui/*file        controllers.Assets.at(path:String="/public/lib/swagger-ui", file:String)
+
+### NoDocs ###
+GET        /                             controllers.PetController.home
 
 ###
-#  summary: An example api to get a pet by id
+#  summary: Get pet by name
 #  responses:
 #    200:
 #      description: success
 #      schema:
 #        $ref: '#/definitions/io.Pet'
+#    404:
+#      description: No pet with such name can be found
 ###
-GET        /get/:id        controllers.PetController.get(id: Long)
+GET        /get/:name                    controllers.PetController.get(name)
